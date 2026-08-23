@@ -901,7 +901,8 @@ html:not(.dark) .ws-loader-text h4 {
 .picture-card {
     position: relative;
     width: 100%;
-    height: 185px;
+    height: 220px !important;
+    min-height: 220px !important;
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -913,21 +914,25 @@ html:not(.dark) .ws-loader-text h4 {
 
 @media (min-width: 640px) {
     .picture-card {
-        height: 200px;
+        height: 250px !important;
+        min-height: 250px !important;
     }
 }
 
 .picture-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
     object-position: center;
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .picture-card:hover {
-    border-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
     transform: translateY(-2px);
 }
 
