@@ -897,15 +897,10 @@ html:not(.dark) .ws-loader-text h4 {
 
 .cyber-neon-text {
     font-size: 32px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    background: linear-gradient(90deg, #ffffff 0%, #93c5fd 25%, #ffffff 50%, #c084fc 75%, #ffffff 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 4s linear infinite;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
     display: inline-block;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.55));
 }
 
 @keyframes shine {

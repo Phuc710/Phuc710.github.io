@@ -76,20 +76,6 @@
     l.addEventListener("mouseleave", function () { g.style.display = "inline-block", m.style.display = "none"; });
     l.addEventListener("click", function () { $("html, body").animate({ scrollTop: 0 }, "fast"); });
     $(document).on({ contextmenu: function (n) { n.preventDefault(); } });
-    var d = 0,
-        u = ["#ff6651", "#42a5f5", "#66bb6a", "#ab47bc", "#ffa726", "#ec407a", "#26c6da", "#78909c", "#ffca28", "#5c6bc0", "#8d6e63", "#26a69a"];
-    jQuery(document).ready(function (n) {
-        n("body").click(function (t) {
-            var e = ["♥️ Năm mới vui vẻ", "❤️ Cung hỉ phát tài", "💛 Tiền vô như nước", "💚 Vợ đẹp con ngoan", "💙 Tài lộc vào nhà", "💜 Phúc thọ vô biên", "🖤 Sống khoẻ đón xuân", "💖 Phú quý cát tường", "💝 Đắc lộc toàn gia", "💙 Hạnh phúc mênh mang", "❤️ Vạn sự thành công", "💚 Mã đáo thành công", "💙 Tiền vô tỷ tỷ", "💜 Tài vạn công danh", "💛 Hạnh phúc gia an", "💖 Sức khoẻ như voi", "💛 Thông minh vượt trội", "💖 Phúc lộc trong tay", "💚 Gia chủ phát tài", "💚 Vạn sự như ý", "💚 Túi tiền nặng ký", "🖤 Làm ăn phát đạt", "💛 Vàng bạc cao sang", "💙 Sức khỏe an nhàn", "💜 Công danh hết ý", "🖤 Cung hỷ cung hỷ", "💝 Hạnh phúc triền miên", "🖤 Sung sướng như tiên"],
-                i = n("<span style='font-family:sans-serif;'>").text(e[d]),
-                h = u[Math.floor(Math.random() * u.length)];
-            d = (d + 1) % e.length;
-            var c = t.pageX, o = t.pageY;
-            i.css({ "z-index": Math.floor(9990001 * Math.random()) + 9999, top: o - 20, left: c, position: "absolute", "font-weight": "bold", color: h });
-            n("body").append(i);
-            i.animate({ top: o - 180, opacity: 0 }, 1500, function () { i.remove(); });
-        });
-    });
     class p {
         constructor(n) { this.element = $(n), this.TimeNows(), setInterval(() => this.TimeNows(), 1e3); }
         TimeNows() {
@@ -163,44 +149,6 @@
     $(window).on("load", () => { k.endLoading(); });
     $(document).on("pjax:send", () => { k.initLoading(); });
     $(document).on("pjax:complete", () => { k.endLoading(); });
-    var _, C, T = new Image;
-    function E(n, t, e, i, h) { this.x = n, this.y = t, this.s = e, this.r = i, this.fn = h; }
-    function q(n) {
-        var t, e;
-        switch (n) {
-            case "x": t = Math.random() * window.innerWidth; break;
-            case "y": t = Math.random() * window.innerHeight; break;
-            case "s": t = Math.random(); break;
-            case "r": t = 6 * Math.random(); break;
-            case "fnx": e = -.5 + 1 * Math.random(), t = function (n, t) { return n + .5 * e - 1.7 }; break;
-            case "fny": e = 1.5 + .7 * Math.random(), t = function (n, t) { return t + e }; break;
-            case "fnr": e = .03 * Math.random(), t = function (n) { return n + e };
-        }
-        return t;
-    }
-    function S() {
-        requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
-        var n, t, e, i, h, c, o, a, s = document.createElement("canvas");
-        C = !0, s.height = window.innerHeight, s.width = window.innerWidth, s.setAttribute("style", "position: fixed;left: 0;top: 0;pointer-events: none;z-index: 8888;"), s.setAttribute("id", "canvas_sakura"), document.getElementsByTagName("body")[0].appendChild(s), a = s.getContext("2d");
-        for (var r = new SakuraList, l = 0; l < 10; l++)t = q("x"), e = q("y"), h = q("r"), i = q("s"), c = q("fnx"), o = q("fny"), randomFnR = q("fnr"), (n = new E(t, e, i, h, { x: c, y: o, r: randomFnR })).draw(a), r.push(n);
-        _ = requestAnimationFrame(function () { a.clearRect(0, 0, s.width, s.height), r.update(), r.draw(a), _ = requestAnimationFrame(arguments.callee); });
-    }
-    function A() {
-        if (C) {
-            var n = document.getElementById("canvas_sakura");
-            n.parentNode.removeChild(n), window.cancelAnimationFrame(_), C = !1;
-        } else S();
-    }
-    sakura = "//i.ibb.co/CpF2yzvf/thanhdieu.png", leaf = "//i.ibb.co/CpF2yzvf/thanhdieu.png", maple = "//i.ibb.co/CpF2yzvf/thanhdieu.png", user = "", T.src = maple;
-    E.prototype.draw = function (n) { n.save(), this.s, n.translate(this.x, this.y), n.rotate(this.r), n.drawImage(T, 0, 0, 30 * this.s, 30 * this.s), n.restore(); };
-    E.prototype.update = function () { this.x = this.fn.x(this.x, this.y), this.y = this.fn.y(this.y, this.y), this.r = this.fn.r(this.r), (this.x > window.innerWidth || this.x < 0 || this.y > window.innerHeight || this.y < 0) && (this.r = q("fnr"), Math.random() > .4 ? (this.x = q("x"), this.y = 0, this.s = q("s"), this.r = q("r")) : (this.x = window.innerWidth, this.y = q("y"), this.s = q("s"), this.r = q("r"))); };
-    (SakuraList = function () { this.list = []; }).prototype.push = function (n) { this.list.push(n); };
-    SakuraList.prototype.update = function () { for (var n = 0, t = this.list.length; n < t; n++)this.list[n].update(); };
-    SakuraList.prototype.draw = function (n) { for (var t = 0, e = this.list.length; t < e; t++)this.list[t].draw(n); };
-    SakuraList.prototype.get = function (n) { return this.list[n]; };
-    SakuraList.prototype.size = function () { return this.list.length; };
-    window.onresize = function () { document.getElementById("canvas_snow"); };
-    T.onload = function () { S(); };
     $("body").on("click", "[data-ws-copy]", function (n) {
         n.preventDefault();
         var t = $(this).data("ws-copy");
