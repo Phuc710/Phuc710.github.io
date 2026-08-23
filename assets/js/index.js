@@ -49,7 +49,7 @@
         }();
     });
     let o = 0;
-    $("body").append(`<div id="fui-toast"></div><div class="td-lock-screen"><section class="td-welcome"><div class="medias"><video class="pc item_video" autoplay loop muted playsinline><source src="./assets/video/pc_1.mp4?v=${c()}" type="video/mp4"></video><video class="mobile item_video" autoplay loop muted playsinline><source src="./assets/video/mb.mp4?v=${c()}" type="video/mp4"></video><div class="date"></div></div><div class="infos"><div class="logo-web-title"><img class="logo-ws" src="https://i.imghippo.com/files/xhRv2509V.jpg" alt="Nguyễn Thanh Phúc"><span class="web-title">${$("html").attr("data-title-loader") || "Màn Hình Khoá"}</span></div><span class="web_desc"></span><div><i class="ri-arrow-down-line close-lockscreen"></i></div></div></section></div>`);
+    $("body").append(`<div id="fui-toast"></div><div class="td-lock-screen"><section class="td-welcome"><div class="medias"><video class="pc item_video" autoplay loop muted playsinline><source src="./assets/video/pc_1.mp4?v=${c()}" type="video/mp4"></video><video class="mobile item_video" autoplay loop muted playsinline><source src="./assets/video/mb.mp4?v=${c()}" type="video/mp4"></video><div class="date"></div></div><div class="infos"><div class="logo-web-title"><img class="logo-ws" src="https://i.imghippo.com/files/xhRv2509V.jpg" alt="Nguyễn Thanh Phúc"><span class="web-title">${$("html").attr("data-title-loader") || "Màn Hình Khoá"}</span></div><span class="web_desc"></span><div><div class="close-lockscreen"><i class="ri-cursor-fill"></i> Click</div></div></div></section></div>`);
     let a = (n, t) => Math.floor(Math.random() * (t - n + 1)) + n,
         s = n => {
             n.style.setProperty("--star-left", `${a(-10, 100)}%`);
