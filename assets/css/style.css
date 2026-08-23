@@ -547,44 +547,24 @@ html:not(.dark) .ws-loader-text h4 {
 .close-lockscreen {
     position: fixed;
     left: 50%;
-    bottom: 35px;
+    bottom: 30px;
     transform: translateX(-50%);
     color: #fff !important;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 8px 22px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 9999px;
-    cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    animation: 2s ease-in-out infinite pulseLockClick;
-    transition: all 0.3s ease;
-    user-select: none;
+    animation: 1.2s linear infinite SlideDown;
+    font-size: 1.4rem;
 }
 
-.close-lockscreen:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.25);
-}
+@keyframes SlideDown {
 
-@keyframes pulseLockClick {
     0%,
     100% {
         transform: translate(-50%, 0);
-        opacity: 0.9;
+        opacity: 1;
     }
 
     50% {
-        transform: translate(-50%, -6px);
-        opacity: 1;
+        transform: translate(-50%, 14px);
+        opacity: 0.5;
     }
 }
 
@@ -897,10 +877,15 @@ html:not(.dark) .ws-loader-text h4 {
 
 .cyber-neon-text {
     font-size: 32px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #ffffff 0%, #93c5fd 25%, #ffffff 50%, #c084fc 75%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
     display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.55));
 }
 
 @keyframes shine {
