@@ -774,6 +774,7 @@ html:not(.dark) .ws-loader-text h4 {
         opacity: 0;
         transform: translate(-50%, 20px);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, 0);
@@ -852,6 +853,7 @@ html:not(.dark) .ws-loader-text h4 {
     color: #f8fafc;
     background: rgba(255, 255, 255, 0.08);
 }
+
 .header-logo-gif {
     height: 80px !important;
     width: auto !important;
@@ -890,6 +892,7 @@ html:not(.dark) .ws-loader-text h4 {
     0% {
         background-position: 0% center;
     }
+
     100% {
         background-position: 200% center;
     }
@@ -898,42 +901,36 @@ html:not(.dark) .ws-loader-text h4 {
 .picture-card {
     position: relative;
     width: 100%;
-    height: 210px;
+    height: 185px;
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    background: #0d0d11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px;
+    background: #18181b;
+    display: block;
     cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (min-width: 640px) {
     .picture-card {
-        height: 230px;
-        padding: 8px;
+        height: 200px;
     }
 }
 
 .picture-card img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 0.65rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .picture-card:hover {
     border-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     transform: translateY(-2px);
 }
 
 .picture-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.06);
 }
