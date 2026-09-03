@@ -530,7 +530,6 @@ html:not(.dark) .ws-loader-text h4 {
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: url(../img/bg-lock-screen.png);
     background-color: #101924;
     z-index: 9229;
 }
